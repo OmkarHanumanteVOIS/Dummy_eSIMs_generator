@@ -87,15 +87,16 @@ function generateOutput() {
 
 function generateOutputAndDisplay() {
     if (generateOutput()) { // Proceed only if output is successfully generated
-        // Display the generated output in the <pre> elements
+        // Get references to the output <pre> elements
         const outputPart1 = document.getElementById('outputPart1');
         const outputPart2 = document.getElementById('outputPart2');
 
+        // Display the generated content
         outputPart1.textContent = generatedOutput.part1;
         outputPart2.textContent = generatedOutput.part2;
 
-        // Let the <pre> resize dynamically based on its content
-        outputPart1.style.whiteSpace = "pre-wrap"; // Ensures proper word wrapping
+        // Allow the page to expand with the output dynamically
+        outputPart1.style.whiteSpace = "pre-wrap"; // Wrap text correctly
         outputPart2.style.whiteSpace = "pre-wrap";
 
         alert("Output generated successfully and displayed!");
