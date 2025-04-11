@@ -17,19 +17,20 @@
         
         <!-- Main content area -->
         <div class="main-content">
-    <div class="input-container">
-        <label for="entryCount">Enter Count:</label>
-        <input type="number" id="entryCount" min="1" max="10" value="1">
+            <div class="input-container">
+                <label for="entryCount">Enter Count:</label>
+                <input type="number" id="entryCount" min="1" max="10" value="1">
+            </div>
+            <button onclick="generateOutputAndDisplay()">Generate Output</button>
+            <button onclick="downloadFiles()">Download Files</button>
+            
+            <!-- Output Display Area -->
+            <h2>VFNL_GEM_File</h2>
+            <pre id="outputPart1"></pre>
+            <h2>SIM_ASSIGN_File</h2>
+            <pre id="outputPart2"></pre>
+        </div>
     </div>
-    <button onclick="generateOutputAndDisplay()">Generate Output</button>
-    <button onclick="downloadFiles()">Download Files</button>
-    
-    <!-- Output Display Area -->
-    <h2>VFNL_GEM_File</h2>
-    <pre id="outputPart1"></pre>
-    <h2>SIM_ASSIGN_File</h2>
-    <pre id="outputPart2"></pre>
-</div>
 
     <script src="script.js"></script>
 </body>
