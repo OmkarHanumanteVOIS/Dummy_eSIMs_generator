@@ -19,12 +19,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8); /* Darkened background */
+    background: rgba(255, 255, 255, 0.2); /* Lighter, soft translucent white */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-    backdrop-filter: blur(5px); /* Smooth blur effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    backdrop-filter: blur(10px); /* Smooth blur effect for a frosted-glass look */
     margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
 }
 
 h1, h2 {
@@ -36,7 +37,7 @@ h1, h2 {
 
 button {
     background: none;
-    color: #ffffff;
+    color: #ffffff; /* Restored white text for buttons */
     font-size: 16px;
     cursor: pointer;
     border-radius: 30px;
