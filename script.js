@@ -60,14 +60,15 @@ function generateRandomSuffix(length) {
 
 function generateOutput() {
     const entryCount = document.getElementById('entryCount').value || 1; // Default to 1 if empty
-    let part1 = "$H:CREATE_PACKAGE\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
-    let part2 = "$H:INVOKE_UNIFIED_RESOURCE_ACTIVITY\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
 
     // Validate selected eSIM type
     if (!selectedSIMType) {
         alert("Please select an eSIM type (Digital or Vouchered) before generating output.");
         return false;
     }
+
+    let part1 = "$H:CREATE_PACKAGE\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
+    let part2 = "$H:INVOKE_UNIFIED_RESOURCE_ACTIVITY\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
 
     // Determine Article ID based on eSIM type
     const articleID = selectedSIMType === 'vouchered' ? "107006560" : "107007551";
