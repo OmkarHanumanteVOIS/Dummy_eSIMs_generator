@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #141E30, #243B55);
+    background: linear-gradient(to right, #e60000, #ff6a00); /* Vodafone Red to Ziggo Orange */
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -10,6 +10,7 @@ body {
     padding: 20px;
     overflow: auto;
 }
+
 .container {
     width: 90%;
     max-width: 800px;
@@ -22,12 +23,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
 }
+
 h1, h2 {
-    color: #03A9F4;
+    color: #ffd700; /* Bright gold to add contrast against the gradient */
     margin-bottom: 10px;
 }
+
 button {
-    background: #03A9F4;
+    background: linear-gradient(to right, #ff6a00, #e60000); /* Ziggo Orange to Vodafone Red for buttons */
     border: none;
     padding: 10px 20px;
     margin: 10px;
@@ -35,12 +38,15 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 button:hover {
-    background: #0288D1;
+    background: linear-gradient(to right, #e60000, #ff6a00); /* Reverse gradient on hover */
     transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.7); /* Subtle glow effect */
 }
+
 pre {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
@@ -48,12 +54,14 @@ pre {
     width: 100%;
     overflow-x: auto;
 }
+
 .input-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
+
 .input-container input {
     padding: 10px;
     font-size: 16px;
@@ -62,7 +70,9 @@ pre {
     margin-bottom: 10px;
     text-align: center;
 }
+
 .input-container label {
     margin-bottom: 10px;
     font-size: 16px;
+    color: #ffd700; /* Matches the headers for consistency */
 }
