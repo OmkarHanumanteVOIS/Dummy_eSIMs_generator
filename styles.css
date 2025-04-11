@@ -6,10 +6,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Allows the page height to grow naturally */
+    height: 100vh;
     margin: 0;
     padding: 20px;
-    overflow: auto; /* Enables scrolling if content overflows */
+    overflow: auto;
 }
 
 /* White Container Box */
@@ -19,49 +19,46 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #ffffff; /* Pure white background */
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
-    color: #000000; /* Black text for contrast within the white box */
 }
 
 /* Heading Styles */
 h1, h2 {
-    color: #e60000; /* Vodafone Red for text contrast */
+    color: #03A9F4;
     margin-bottom: 10px;
-    font-weight: bold;
-    text-align: center;
 }
 
-/* Buttons with Matching Gradient */
+/* Buttons */
 button {
-    background: linear-gradient(to right, #ff6a00, #e60000); /* Ziggo Orange to Vodafone Red */
+    background: #03A9F4;
     border: none;
-    padding: 12px 25px;
+    padding: 10px 20px;
     margin: 10px;
     color: #ffffff;
     font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background: linear-gradient(to right, #e60000, #ff6a00); /* Reverse gradient on hover */
+    background: #0288D1;
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(255, 106, 0, 0.5); /* Adds a subtle glow effect */
 }
 
-/* Preformatted Text for Output */
+/* Output Boxes (Preformatted Text) */
 pre {
-    background: rgba(0, 0, 0, 0.5);
+    background: #ffffff; /* Changed background to white */
+    color: #000000; /* Changed text to black */
     padding: 10px;
     border-radius: 5px;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* Maintain horizontal scrolling for long text */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Retained light shadow for depth */
 }
 
 /* Input Container */
@@ -76,14 +73,12 @@ pre {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #ddd; /* Subtle gray border */
+    border: none;
     margin-bottom: 10px;
-    width: 100%;
     text-align: center;
 }
 
 .input-container label {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #000000; /* Black text */
 }
