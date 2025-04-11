@@ -17,42 +17,48 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, rgba(230, 0, 0, 0.9), rgba(255, 106, 0, 0.9)); /* Blended VZ gradient */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.5); /* Glow effect */
     margin-bottom: 20px;
+    border: 2px solid rgba(255, 106, 0, 0.8); /* Subtle border for pop */
 }
 
 h1, h2 {
-    color: #ffd700; /* Bright gold to add contrast against the gradient */
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds depth to the text */
     margin-bottom: 10px;
 }
 
 button {
-    background: linear-gradient(to right, #ff6a00, #e60000); /* Ziggo Orange to Vodafone Red for buttons */
+    background: linear-gradient(to right, #ff6a00, #e60000); /* Ziggo Orange to Vodafone Red */
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     margin: 10px;
     color: #ffffff;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); /* Adds button depth */
 }
 
 button:hover {
-    background: linear-gradient(to right, #e60000, #ff6a00); /* Reverse gradient on hover */
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 106, 0, 0.7); /* Subtle glow effect */
+    background: linear-gradient(to right, #e60000, #ff6a00); /* Reverse the gradient */
+    transform: scale(1.08);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.7); /* Glow effect */
 }
 
 pre {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    background: linear-gradient(to right, rgba(230, 0, 0, 0.8), rgba(255, 106, 0, 0.8)); /* Matching gradient for preformatted text */
+    padding: 15px;
     border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for definition */
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.5); /* Soft glow */
     width: 100%;
     overflow-x: auto;
+    color: #ffd700; /* Light gold text for readability */
 }
 
 .input-container {
@@ -66,13 +72,16 @@ pre {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
     margin-bottom: 10px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.2); /* Light translucent background */
+    color: #ffffff;
 }
 
 .input-container label {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #ffd700; /* Matches the headers for consistency */
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
