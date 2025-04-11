@@ -19,10 +19,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1); /* Light, translucent container */
+    background: rgba(0, 0, 0, 0.8); /* Darkened background */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
     backdrop-filter: blur(5px); /* Smooth blur effect */
     margin-bottom: 20px;
 }
@@ -53,14 +53,14 @@ button:hover {
 }
 
 pre {
-    background: rgba(255, 255, 255, 0.1); /* Light and clean for preformatted text */
+    background: #ffffff; /* White background similar to the dropdown */
     padding: 15px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Soft shadow for clarity */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Light shadow for definition */
     width: 100%;
     overflow-x: auto;
-    color: #ffffff;
+    color: #000000; /* Black text for clarity */
 }
 
 .input-container {
