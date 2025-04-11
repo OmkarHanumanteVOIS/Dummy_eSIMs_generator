@@ -7,7 +7,7 @@ function selectSIMType(type) {
     buttons.forEach((button) => button.classList.remove('active')); // Remove active class from all buttons
     document.getElementById(type).classList.add('active'); // Add active class to the selected button
 
-    // Store selected eSIM type in a global variable
+    // Store the selected eSIM type globally
     selectedSIMType = type; // eSIM type will be stored as 'digital' or 'vouchered'
 }
 
@@ -95,8 +95,8 @@ function generateOutputAndDisplay() {
         outputPart2.textContent = generatedOutput.part2;
 
         // Dynamically adjust the height of the <pre> elements to fit the content
-        outputPart1.style.height = outputPart1.scrollHeight + "px";
-        outputPart2.style.height = outputPart2.scrollHeight + "px";
+        outputPart1.style.height = "auto";
+        outputPart2.style.height = "auto";
 
         alert("Output generated successfully and displayed!");
     }
