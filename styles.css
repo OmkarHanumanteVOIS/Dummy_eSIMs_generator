@@ -124,7 +124,8 @@ pre {
     color: #000000; /* Black text for readability */
     font-family: 'Courier New', monospace; /* Monospace font for output display */
     font-size: 0.95rem;
-    overflow-wrap: break-word; /* Break long words automatically */
+    overflow-wrap: break-word; /* Ensure wrapping of long words */
     overflow-x: auto; /* Horizontal scrolling if needed */
+    margin-bottom: 20px;
 }
 
