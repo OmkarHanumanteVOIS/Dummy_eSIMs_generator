@@ -1,4 +1,5 @@
 let generatedOutput = { part1: "", part2: "" };
+let selectedSIMType = null; // Default: no SIM type selected
 
 function selectSIMType(type) {
     // Highlight the selected eSIM type
@@ -7,7 +8,7 @@ function selectSIMType(type) {
     document.getElementById(type).classList.add('active'); // Add active class to the selected button
 
     // Store selected eSIM type in a global variable
-    window.selectedSIMType = type; // eSIM type will be stored as 'digital' or 'vouchered'
+    selectedSIMType = type; // eSIM type will be stored as 'digital' or 'vouchered'
 }
 
 function generateICCID() {
@@ -59,12 +60,17 @@ function generateRandomSuffix(length) {
 
 function generateOutput() {
     const entryCount = document.getElementById('entryCount').value || 1; // Default to 1 if empty
-    const simType = window.selectedSIMType || 'digital'; // Default to 'digital' if no type is selected
     let part1 = "$H:CREATE_PACKAGE\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
     let part2 = "$H:INVOKE_UNIFIED_RESOURCE_ACTIVITY\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
 
+    // Validate selected eSIM type
+    if (!selectedSIMType) {
+        alert("Please select an eSIM type (Digital or Vouchered) before generating output.");
+        return false;
+    }
+
     // Determine Article ID based on eSIM type
-    const articleID = simType === 'vouchered' ? "107006560" : "107007551";
+    const articleID = selectedSIMType === 'vouchered' ? "107006560" : "107007551";
 
     let numbersList = generateRandomNumbers(entryCount);
     for (let [num1, num2] of numbersList) {
@@ -74,27 +80,25 @@ function generateOutput() {
     part1 += "$F:\n";
     part2 += "$F:";
     generatedOutput = { part1, part2 };
-}
 
-function download(filename, text) {
-    let element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
+    return true;
 }
 
 function generateOutputAndDisplay() {
-    generateOutput(); // Generate output based on user input
+    if (generateOutput()) { // Proceed only if output is successfully generated
+        // Display the generated output in the <pre> elements
+        const outputPart1 = document.getElementById('outputPart1');
+        const outputPart2 = document.getElementById('outputPart2');
 
-    // Display the generated output in the <pre> elements
-    document.getElementById('outputPart1').textContent = generatedOutput.part1;
-    document.getElementById('outputPart2').textContent = generatedOutput.part2;
+        outputPart1.textContent = generatedOutput.part1;
+        outputPart2.textContent = generatedOutput.part2;
 
-    // Notify the user
-    alert("Output generated successfully and displayed!");
+        // Dynamically adjust the height of the <pre> elements to fit the content
+        outputPart1.style.height = outputPart1.scrollHeight + "px";
+        outputPart2.style.height = outputPart2.scrollHeight + "px";
+
+        alert("Output generated successfully and displayed!");
+    }
 }
 
 function downloadFiles() {
@@ -108,4 +112,14 @@ function downloadFiles() {
 
     download(filenamePart1, generatedOutput.part1);
     download(filenamePart2, generatedOutput.part2);
+}
+
+function download(filename, text) {
+    let element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
 }
