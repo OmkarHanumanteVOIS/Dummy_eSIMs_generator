@@ -113,3 +113,16 @@ body {
     transform: scale(1.05);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
+
+pre {
+    background: #ffffff; /* White background for clarity */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Light shadow for definition */
+    width: 100%;
+    overflow-x: auto;
+    color: #000000; /* Black text for readability */
+    font-family: 'Courier New', monospace; /* Monospace font for output display */
+    font-size: 0.95rem;
+}
