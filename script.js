@@ -87,13 +87,13 @@ function download(filename, text) {
 }
 
 function generateOutputAndDisplay() {
-    generateOutput(); // Generates the output using the selected eSIM type and entry count
-    
-    // Display the generated output in the corresponding <pre> elements
+    generateOutput(); // Generate output based on user input
+
+    // Display the generated output in the <pre> elements
     document.getElementById('outputPart1').textContent = generatedOutput.part1;
     document.getElementById('outputPart2').textContent = generatedOutput.part2;
 
-    // Show a success message
+    // Notify the user
     alert("Output generated successfully and displayed!");
 }
 
