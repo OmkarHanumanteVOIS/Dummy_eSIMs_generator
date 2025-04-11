@@ -1,116 +1,115 @@
+/* VZ Gradient Background */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #e60000, #ff6a00); /* Vodafone Red to Ziggo Orange */
-    background-attachment: fixed;
-    background-size: cover;
     color: #ffffff;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centralize content vertically */
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding: 20px;
-    overflow: auto;
+    padding: 0;
 }
 
+/* White Page-Like Container */
 .container {
     width: 90%;
-    max-width: 700px;
+    max-width: 1200px;
+    display: flex;
+    background: #ffffff; /* Pure white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    overflow: hidden;
+    height: 70%;
+}
+
+/* Sidebar for eSIM Types */
+.sidebar {
+    width: 30%; /* Sidebar takes up 30% */
+    background: rgba(255, 255, 255, 0.95); /* Slight translucent white */
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.15); /* Lightly translucent container */
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
-    backdrop-filter: blur(12px); /* Enhanced frosted-glass effect */
-    margin: 20px 0;
-    border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle white border */
+    padding: 20px;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
 }
 
-h1 {
-    color: #ffffff;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Elegant shadow for header text */
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 1.8rem;
-}
-
-h2 {
-    color: #ffffff;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    margin-bottom: 10px;
+.sidebar h2 {
+    color: #000000; /* Black header text */
+    margin-bottom: 20px;
     font-size: 1.5rem;
-}
-
-button {
-    background: linear-gradient(to right, #ff6a00, #e60000); /* Ziggo Orange to Vodafone Red */
-    border: none;
-    padding: 12px 30px;
-    margin: 10px;
-    color: #ffffff;
-    font-size: 16px;
     font-weight: bold;
+    text-align: center;
+}
+
+.sidebar button {
+    width: 80%;
+    background: rgba(0, 0, 0, 0.05); /* Default light gray */
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #000000; /* Black text */
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Button shadow for depth */
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-button:hover {
-    background: linear-gradient(to right, #e60000, #ff6a00); /* Reverse gradient on hover */
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+.sidebar button:hover {
+    background: rgba(0, 0, 0, 0.1); /* Slightly darker gray */
 }
 
-pre {
-    background: rgba(255, 255, 255, 0.8); /* White translucent background for readability */
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for definition */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Light shadow effect */
-    width: 100%;
-    overflow-x: auto;
-    color: #000000; /* Black text for high contrast */
-    font-family: 'Courier New', monospace; /* Monospace font for output display */
-    font-size: 0.95rem;
+.sidebar button.active {
+    background: linear-gradient(to right, #e60000, #ff6a00); /* VZ gradient for active state */
+    color: #ffffff; /* White text for contrast */
+    border-color: #ffffff; /* Border to match active button */
+}
+
+/* Main Content Area */
+.main-content {
+    width: 70%; /* Main content takes up the remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align inputs to the left for a clean look */
-    width: 100%;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .input-container input {
     padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for inputs */
-    background: rgba(255, 255, 255, 0.2); /* Soft white for input background */
-    margin-bottom: 10px;
-    color: #ffffff;
-    width: 100%;
-    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100px;
+    text-align: center;
 }
 
 .input-container label {
+    font-size: 1rem;
+    color: #000000; /* Black text */
     margin-bottom: 5px;
-    font-size: 14px;
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.input-container select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Match input style */
-    background: rgba(255, 255, 255, 0.2);
+.main-content button {
+    background: linear-gradient(to right, #e60000, #ff6a00); /* VZ Gradient */
+    border: none;
+    padding: 10px 25px;
+    margin: 10px;
     color: #ffffff;
-    width: 100%;
-    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-content button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
