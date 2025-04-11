@@ -1,8 +1,18 @@
 let generatedOutput = { part1: "", part2: "" };
 
+function selectSIMType(type) {
+    // Highlight the selected eSIM type
+    const buttons = document.querySelectorAll('.sidebar button');
+    buttons.forEach((button) => button.classList.remove('active')); // Remove active class from all buttons
+    document.getElementById(type).classList.add('active'); // Add active class to the selected button
+
+    // Store selected eSIM type in a global variable
+    window.selectedSIMType = type; // eSIM type will be stored as 'digital' or 'vouchered'
+}
+
 function generateICCID() {
-    const prefix = "893106"; // Updated prefix according to your criteria
-    const remainingLength = 12; // Adjusted remaining length for 19-digit ICCID
+    const prefix = "893106"; // ICCID prefix
+    const remainingLength = 12; // Remaining random digits length
     const randomDigits = Array.from({ length: remainingLength }, () => Math.floor(Math.random() * 10)).join('');
 
     function luhnChecksum(iccid) {
@@ -48,13 +58,13 @@ function generateRandomSuffix(length) {
 }
 
 function generateOutput() {
-    const entryCount = document.getElementById('entryCount').value;
-    const simType = document.getElementById('simType').value; // Get the selected eSIM type
+    const entryCount = document.getElementById('entryCount').value || 1; // Default to 1 if empty
+    const simType = window.selectedSIMType || 'digital'; // Default to 'digital' if no type is selected
     let part1 = "$H:CREATE_PACKAGE\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
     let part2 = "$H:INVOKE_UNIFIED_RESOURCE_ACTIVITY\n$H:Type,Value,Pool,Activity Name,Activity Parameters,Attributes\n";
-    
-    // Determine the Article ID based on the eSIM type
-    const articleID = simType === "vouchered" ? "107006560" : "107007551";
+
+    // Determine Article ID based on eSIM type
+    const articleID = simType === 'vouchered' ? "107006560" : "107007551";
 
     let numbersList = generateRandomNumbers(entryCount);
     for (let [num1, num2] of numbersList) {
@@ -78,16 +88,18 @@ function download(filename, text) {
 
 function generateOutputAndDisplay() {
     generateOutput();
-    document.getElementById('outputPart1').textContent = generatedOutput.part1;
-    document.getElementById('outputPart2').textContent = generatedOutput.part2;
+    alert("Output generated successfully!");
 }
 
 function downloadFiles() {
+    if (!generatedOutput.part1 || !generatedOutput.part2) {
+        alert("Please generate output first!");
+        return;
+    }
     let randomSuffix = generateRandomSuffix(5);
     let filenamePart1 = `VFNL_GEM_001122222333777777${randomSuffix}.txt`;
     let filenamePart2 = `SIM_ASSIGN_119111112233454467${randomSuffix}.txt`;
 
-    // Use the stored output
     download(filenamePart1, generatedOutput.part1);
     download(filenamePart2, generatedOutput.part2);
 }
