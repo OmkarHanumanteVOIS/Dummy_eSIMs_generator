@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate and Download Output</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dummy SIM Load Files Generator</h1>
+        <div class="input-container">
+            <label for="entryCount">Number of Entries (1-10):</label>
+            <input type="number" id="entryCount" min="1" max="10" value="1">
+        </div>
+        <div class="input-container">
+            <label for="simType">Select eSIM Type:</label>
+            <select id="simType">
+                <option value="digital">Digital eSIM</option>
+                <option value="vouchered">Vouchered eSIM</option>
+            </select>
+        </div>
+        <button onclick="generateOutputAndDisplay()">Generate and Display Output</button>
+        <button onclick="downloadFiles()">Download Both Files</button>
+        <h2>VFNL_GEM_File</h2>
+        <pre id="outputPart1"></pre>
+        <h2>SIM_ASSIGN_File</h2>
+        <pre id="outputPart2"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
