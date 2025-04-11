@@ -5,80 +5,68 @@ body {
     color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Align content to the top */
+    height: auto; /* Allow the page to grow */
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 /* White Page-Like Container */
 .container {
     width: 90%;
     max-width: 1200px;
-    display: flex;
     background: #ffffff; /* Pure white background */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-    overflow: hidden;
-    height: 70%;
+    padding: 20px;
 }
 
 /* Sidebar for eSIM Types */
 .sidebar {
-    width: 30%; /* Sidebar takes up 30% */
-    background: rgba(255, 255, 255, 0.95); /* Slight translucent white */
+    width: 30%;
+    background: rgba(255, 255, 255, 0.95);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
 }
 
 .sidebar h2 {
-    color: #000000; /* Black header text */
+    color: #000000;
     margin-bottom: 20px;
     font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
 }
 
 .sidebar button {
     width: 80%;
-    background: rgba(0, 0, 0, 0.05); /* Default light gray */
+    background: rgba(0, 0, 0, 0.05);
     border: 2px solid transparent;
-    padding: 10px 20px;
-    margin: 10px 0;
+    padding: 10px;
+    margin: 10px;
     border-radius: 5px;
-    color: #000000; /* Black text */
+    color: #000000;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.sidebar button:hover {
-    background: rgba(0, 0, 0, 0.1); /* Slightly darker gray */
+    transition: background 0.3s ease;
 }
 
 .sidebar button.active {
-    background: linear-gradient(to right, #e60000, #ff6a00); /* VZ gradient for active state */
-    color: #ffffff; /* White text for contrast */
-    border-color: #ffffff; /* Border to match active button */
+    background: linear-gradient(to right, #e60000, #ff6a00);
+    color: #ffffff;
+    border-color: #ffffff;
 }
 
 /* Main Content Area */
 .main-content {
-    width: 70%; /* Main content takes up the remaining space */
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .input-container {
     margin-bottom: 20px;
-    text-align: center;
 }
 
 .input-container input {
@@ -87,45 +75,17 @@ body {
     border-radius: 5px;
     border: 1px solid #ddd;
     width: 100px;
-    text-align: center;
-}
-
-.input-container label {
-    font-size: 1rem;
-    color: #000000; /* Black text */
-    margin-bottom: 5px;
-}
-
-.main-content button {
-    background: linear-gradient(to right, #e60000, #ff6a00); /* VZ Gradient */
-    border: none;
-    padding: 10px 25px;
-    margin: 10px;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.main-content button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 pre {
     background: #ffffff; /* White background */
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
-    width: 100%;
-    color: #000000; /* Black text for readability */
-    font-family: 'Courier New', monospace; /* Monospace font for output display */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-family: 'Courier New', monospace;
     font-size: 0.95rem;
-    overflow-wrap: break-word; /* Ensure wrapping of long words */
-    overflow-x: auto; /* Horizontal scrolling if needed */
+    white-space: pre-wrap; /* Enable text wrapping */
     margin-bottom: 20px;
 }
-
