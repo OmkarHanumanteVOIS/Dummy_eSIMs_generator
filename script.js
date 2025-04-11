@@ -87,16 +87,17 @@ function generateOutput() {
 
 function generateOutputAndDisplay() {
     if (generateOutput()) { // Proceed only if output is successfully generated
-        // Display the generated output in the <pre> elements
+        // Get references to the output <pre> elements
         const outputPart1 = document.getElementById('outputPart1');
         const outputPart2 = document.getElementById('outputPart2');
 
+        // Display the generated content
         outputPart1.textContent = generatedOutput.part1;
         outputPart2.textContent = generatedOutput.part2;
 
-        // Dynamically adjust the height of the <pre> elements to fit the content
-        outputPart1.style.height = "auto";
-        outputPart2.style.height = "auto";
+        // Dynamically adjust the height of the <pre> elements
+        outputPart1.style.height = `${outputPart1.scrollHeight}px`; // Match the scroll height
+        outputPart2.style.height = `${outputPart2.scrollHeight}px`; // Match the scroll height
 
         alert("Output generated successfully and displayed!");
     }
